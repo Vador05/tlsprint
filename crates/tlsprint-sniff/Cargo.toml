@@ -1,0 +1,17 @@
+[package]
+name = "tlsprint-sniff"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+tlsprint-core = { path = "../tlsprint-core" }
+pcap = "2.3"
+etherparse = "0.18"
+chrono.workspace = true
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+anyhow.workspace = true

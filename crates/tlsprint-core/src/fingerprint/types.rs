@@ -1,5 +1,7 @@
+use serde::Serialize;
+
 /// Parsed ClientHello information needed for JA3/JA4 fingerprinting.
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize)]
 pub struct ClientHelloInfo {
     /// TLS version from the record layer (e.g., 0x0303 for TLS 1.2)
     pub tls_version: u16,
@@ -22,7 +24,7 @@ pub struct ClientHelloInfo {
 }
 
 /// Result of a JA3 fingerprint computation.
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 pub struct Ja3Result {
     /// 32-character MD5 hex hash
     pub hash: String,
@@ -31,7 +33,7 @@ pub struct Ja3Result {
 }
 
 /// Result of a JA4 fingerprint computation.
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 pub struct Ja4Result {
     /// Full JA4 fingerprint: part_a + "_" + part_b + "_" + part_c
     pub hash: String,
